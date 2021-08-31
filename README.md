@@ -62,7 +62,7 @@ A sample request is given below.
 ```
 
 
-# Responses
+### Responses
 
 The response is in JSON representation of the resource created or edited.However, if an invalid request is submitted, or some other error occurs, api returns a JSON response in the following format:
 
@@ -87,7 +87,7 @@ Create a `GET` request by sending the report id in params which we need to get.<
 1. The request will find the report and calculate the mean price then send back response.
 
 
-# Responses
+### Responses
 
 The response is in JSON representation of the report.However, if an invalid request is submitted, or some other error occurs, api returns a JSON response in the following format:
 
@@ -123,7 +123,7 @@ Create a `GET` request by sending the report id in params which we need to get.<
 1. The request will find the report and calculate the mean price then send back response.
 
 
-# Responses
+### Responses
 
 The response is in JSON representation of the report.However, if an invalid request is submitted, or some other error occurs, api returns a JSON response in the following format:
 
