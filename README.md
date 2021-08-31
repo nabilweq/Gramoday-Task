@@ -109,7 +109,7 @@ The response is in JSON representation of the report.However, if an invalid requ
 }
 ```
 
-There have two type response :
+There will be have two type response :
 1. For a successfull request it will send back the report testDetails
 2. If the request was invalid it will send back a error message
 
@@ -120,7 +120,8 @@ GET /test?reportID=[REPORT_ID]
 ```
 
 Create a `GET` request by sending the report id in params which we need to get.<br>
-1. The request will find the report and calculate the mean price then send back response.
+1. The request will find the report and verify that the /reports POST
+and /reports GET API returns the correct response.
 
 
 ### Responses
@@ -129,24 +130,27 @@ The response is in JSON representation of the report.However, if an invalid requ
 
 ```javascript
 {
-    "_id": "612db4e3496545e401c48b71",
-    "cmdtyName": "potato",
-    "cmdtyID": "cmdty-1",
-    "marketID": "market-1",
-    "marketName": "Nabeel shop",
-    "users": [
-        "user-2",
-        "user-1",
-        "user-3"
-    ],
-    "timestamp": "31/08/2021",
-    "priceUnit": "Kg",
-    "price": "15.00"
+    "createdAt": "31/08/2021",
+    "data": {
+        "users": [
+            "user-2",
+            "user-1",
+            "user-3",
+            "user-4"
+        ],
+        "pricesAdded": [
+            14,
+            15,
+            16,
+            14
+        ]
+    },
+    "priceSum": 59,
+    "numOfSubmission": 4,
+    "finalPrice": 14.75,
+    "lastSubmission": "2021-08-31T07:18:20.250Z",
+    "description": "4 users submitted the report and the system converted the actual value to a base value based on the conversion value given by them"
 }
 ```
-
-There have two type response :
-1. For a successfull request it will send back the report testDetails
-2. If the request was invalid it will send back a error message
 
 
