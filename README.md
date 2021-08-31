@@ -11,7 +11,7 @@ prices.
 These docs describe how to use the api, how to make request and the possible responses
 
 There have two endpoints
-1. to submit the report and retrive a final report
+1. To submit the report and retrive a final report
 2. To test the api
 
 ## Prerequisite
@@ -19,13 +19,15 @@ There have two endpoints
 1. Nodejs
 2. MongoDB
 
-## Use Cases
+## Initialisation
 
-There are many reasons to use the Gophish API. The most common use case is to gather report information for a given campaign, so that you can build custom reports in software you're most familiar with, such as Excel or Numbers.
+```http
+npm install
+```
+Create a `.env` file in the root and provide the mongo connection url and specific the database in `MONGO_URL` variable
 
-However, automating the creation of campaigns and campaign attributes such as templates, landing pages, and more provides the ability to create a fully automated phishing simulation program. This would allow campaigns to be run throughout the year automatically. This also allows the Gophish administrator to be included in the campaigns, since they wouldn't know exactly which day it would start!
 
-## Authorization
+## Request-1
 
 All API requests require the use of a generated API key. You can find your API key, or generate a new one, by navigating to the /settings endpoint, or clicking the “Settings” sidebar item.
 
