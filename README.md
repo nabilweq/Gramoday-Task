@@ -113,5 +113,40 @@ There have two type response :
 1. For a successfull request it will send back the report testDetails
 2. If the request was invalid it will send back a error message
 
+### Request-3
+
+```http
+GET /test?reportID=[REPORT_ID]
+```
+
+Create a `GET` request by sending the report id in params which we need to get.<br>
+1. The request will find the report and calculate the mean price then send back response.
+
+
+## Responses-3
+
+The response is in JSON representation of the report.However, if an invalid request is submitted, or some other error occurs, api returns a JSON response in the following format:
+
+```javascript
+{
+    "_id": "612db4e3496545e401c48b71",
+    "cmdtyName": "potato",
+    "cmdtyID": "cmdty-1",
+    "marketID": "market-1",
+    "marketName": "Nabeel shop",
+    "users": [
+        "user-2",
+        "user-1",
+        "user-3"
+    ],
+    "timestamp": "31/08/2021",
+    "priceUnit": "Kg",
+    "price": "15.00"
+}
+```
+
+There have two type response :
+1. For a successfull request it will send back the report testDetails
+2. If the request was invalid it will send back a error message
 
 
