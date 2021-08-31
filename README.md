@@ -21,6 +21,7 @@ There have two endpoints
 
 ## Initialisation
 
+Run the commands
 
 ```http
 1. npm install
@@ -30,7 +31,7 @@ eg :-`MONGO_URL=[CONNECTION_URL]`
 ```http
 2. node index
 ```
-The server will start in Port No: 3000.
+The server will start in Port No: 3000
 
 
 ## Request-1
