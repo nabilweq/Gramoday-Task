@@ -1,12 +1,23 @@
 # Introduction
 
-Gophish was built from the ground-up with a JSON API that makes it easy for developers and sysadmins to automate simulated phishing campaigns.
+This is an express JS API web-service which captures user contributed
+reports and returns an aggregate report in response.
 
-These docs describe how to use the [Gophish](https://getgophish.com) API. We hope you enjoy these docs, and please don't hesitate to [file an issue](https://github.com/gophish/gophish/issues/new) if you see anything missing.
+Each report consists of a market-commodity combination for which prices in the Mandi(Market)
+are provided in a certain unit (along with their conversion factor to base unit - Kg).
+You need to combine the reports per market-commodity by calculating the average of the report
+prices.
 
-{% hint style="info" %}
-**Is Python your language of choice?** If so, we have a [fully-supported Python API client](https://docs.getgophish.com/python-api-client/) that makes working with the Gophish API a piece of cake!
-{% endhint %}
+These docs describe how to use the api, how to make request and the possible responses
+
+There have two endpoints
+1. to submit the report and retrive a final report
+2. To test the api
+
+## Prerequisite
+
+1. Nodejs
+2. MongoDB
 
 ## Use Cases
 
