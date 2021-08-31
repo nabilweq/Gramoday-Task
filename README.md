@@ -21,15 +21,14 @@ There have two endpoints
 
 ## Initialisation
 
-1. 
+
 ```http
-npm install
+1. npm install
 ```
 Create a `.env` file in the root and provide the mongodb connection url and specific the database in `MONGO_URL` variable.<br>
 eg :-`MONGO_URL=[CONNECTION_URL]`
-2.
 ```http
-node index
+2. node index
 ```
 The server will start in Port No: 3000.
 
