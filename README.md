@@ -75,7 +75,7 @@ The response is in JSON representation of the resource created or edited.However
 
 The `status` attribute contains a message 'success' if the request was successful or the message is 'error' if an error occur.
 
-The `reportID` contain the Id of the report created, if an occur it is `message` containing the error message.
+The `reportID` contain the Id of the report created, if an error occur, it is `message` containing the error message.
 
 ## Request-2
 

@@ -8,12 +8,14 @@ router.get("/", async (req, res) => {
 
         const test = await Report.findById(req.query.reportID);
         const count = test.users.length;
+
         //calculate the mean average
         var sum =0;
         for(var i =0; i < test.prices.length; i++) {
             sum+= test.prices[i];
         }
         var mean = sum/test.prices.length;
+        
         const testDetails = {
             "createdAt": test.createdAt,
             "data": {

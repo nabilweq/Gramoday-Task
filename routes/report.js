@@ -40,7 +40,6 @@ router.post("/", async (req, res) => {
 
             //save new report
             const savedReport = await newReport.save();
-            console.log(savedReport);
             return res.status(200).json({ "status": "success", "reportID":savedReport._id });
         }
     } catch (err) {
@@ -49,13 +48,13 @@ router.post("/", async (req, res) => {
     
 });
 
-//find a report by id, and send back.
+//find a report by id, and send back with mean price.
 router.get("/", async (req, res) => {
 
     try {
-        const report = await Report.findById(req.query.reportID).select(["-__v","-updatedAt"]);
+        const report = await Report.findById(req.query.reportID).select("-__v",);
  
-        //calculate the mean average
+        //calculate the mean price
         var sum =0;
         for(var i =0; i < report.prices.length; i++) {
             sum+= report.prices[i];
