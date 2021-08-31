@@ -24,7 +24,8 @@ There have two endpoints
 ```http
 npm install
 ```
-Create a `.env` file in the root and provide the mongo connection url and specific the database in `MONGO_URL` variable
+Create a `.env` file in the root and provide the mongodb connection url and specific the database in `MONGO_URL` variable.
+`MONGO_URL=[CONNECTION_URL]`
 
 
 ## Request-1
