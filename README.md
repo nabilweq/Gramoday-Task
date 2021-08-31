@@ -41,7 +41,7 @@ POST /reports
 ```
 
 Create a `POST` request by sending the details in request body.<br>
-1. The api will look for an existing report with marketID-cmdtyID-date.
+1. The request will look for an existing report with marketID-cmdtyID-date.
 2. A user can submit only one report for a commodity in specific market per day
 3. Save a report<br><br>
 A sample request is given below.
@@ -77,17 +77,41 @@ The `status` attribute contains a message 'success' if the request was successfu
 
 The `reportID` contain the Id of the report created, if an occur it is `message` containing the error message.
 
+## Request-2
+
+```http
+GET /reports?reportID=[REPORT_ID]
+```
+
+Create a `GET` request by sending the report id in params which we need to get.<br>
+1. The request will find the report and calculate the mean price then send back response.
 
 
-## Status Codes
+## Responses-2
 
-Gophish returns the following status codes in its API:
+The response is in JSON representation of the report.However, if an invalid request is submitted, or some other error occurs, api returns a JSON response in the following format:
 
-| Status Code | Description |
-| :--- | :--- |
-| 200 | `OK` |
-| 201 | `CREATED` |
-| 400 | `BAD REQUEST` |
-| 404 | `NOT FOUND` |
-| 500 | `INTERNAL SERVER ERROR` |
+```javascript
+{
+    "_id": "612db4e3496545e401c48b71",
+    "cmdtyName": "potato",
+    "cmdtyID": "cmdty-1",
+    "marketID": "market-1",
+    "marketName": "Nabeel shop",
+    "users": [
+        "user-2",
+        "user-1",
+        "user-3"
+    ],
+    "timestamp": "31/08/2021",
+    "priceUnit": "Kg",
+    "price": "15.00"
+}
+```
+
+There have two type response :
+1. For a successfull request it will send back the report testDetails
+2. If the request was invalid it will send back a error message
+
+
 
