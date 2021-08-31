@@ -36,10 +36,14 @@ The server will start in Port No: 3000
 
 ## Request-1
 
+```http
+POST /reports
+```
+
 Create a `POST` request by sending the details in request body.<br>
 1. The api will look for an existing report with marketID-cmdtyID-date.
 2. A user can submit only one report for a commodity in specific market per day
-3. Save a report<br>
+3. Save a report<br><br>
 A sample request is given below.
 ```javascript
 {
@@ -58,31 +62,26 @@ A sample request is given below.
 ```
 
 
-```http
-POST /reports
-```
-
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
 | `api_key` | `string` | **Required**. Your Gophish API key |
 
-## Responses
+## Responses-1
 
-Many API endpoints return the JSON representation of the resources created or edited. However, if an invalid request is submitted, or some other error occurs, Gophish returns a JSON response in the following format:
+The response is in JSON representation of the resource created or edited.However, if an invalid request is submitted, or some other error occurs, api returns a JSON response in the following format:
 
 ```javascript
 {
-  "message" : string,
-  "success" : bool,
-  "data"    : string
+    "status": "success",
+    "reportID": "612db4e3496545e401c48b71"
 }
 ```
 
-The `message` attribute contains a message commonly used to indicate errors or, in the case of deleting a resource, success that the resource was properly deleted.
+The `status` attribute contains a message `success` if the request was successful or the message is `error` if an error occur.
 
-The `success` attribute describes if the transaction was successful or not.
+The `reportID` contain the Id of the report created, if an occur it is `message` containing the error message.
 
-The `data` attribute contains any other metadata associated with the response. This will be an escaped string containing JSON data.
+
 
 ## Status Codes
 
