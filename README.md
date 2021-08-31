@@ -36,8 +36,26 @@ The server will start in Port No: 3000
 
 ## Request-1
 
-
-
+Create a `POST` request by sending the details in request body.<br>
+1. The api will look for an existing report with marketID-cmdtyID-date.
+2. A user can submit only one report for a commodity in specific market per day
+3. Save a report<br>
+A sample request is given below.
+```javascript
+{
+    "reportDetails": {
+        "userID": "user-1",
+        "marketID": "market-1",
+        "marketName": "Nabeel shop",
+        "cmdtyID": "cmdty-1",
+        "marketType": "Mandi",
+        "cmdtyName": "Potato",
+        "priceUnit": "Pack",
+        "convFctr": 50,
+        "price": 700
+    }
+}
+```
 
 
 ```http
